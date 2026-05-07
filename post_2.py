@@ -6,7 +6,7 @@ import requests
 from google import genai
 
 # ── 環境變數 ──────────────────────────────────────────
-NOTION_TOKEN_2       = os.environ["NOTION_TOKEN_2"]
+NOTION_TOKEN_2       = os.environ["NOTION_API_KEY"]
 NOTION_PENDING_DB_ID = os.environ["NOTION_DATABASE_ID_2"]
 GEMINI_API_KEY       = os.environ["GEMINI_API_KEY"]
 THREADS_USER_ID      = os.environ["THREADS_USER_ID"]
