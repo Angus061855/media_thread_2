@@ -10,7 +10,7 @@ NOTION_TOKEN_2       = os.environ["NOTION_API_KEY"]
 NOTION_PENDING_DB_ID = os.environ["NOTION_DATABASE_ID_2"]
 GEMINI_API_KEY       = os.environ["GEMINI_API_KEY"]
 THREADS_USER_ID      = os.environ["THREADS_USER_ID"]
-THREADS_TOKEN        = os.environ["IG_ACCESS_TOKEN"]
+THREADS_TOKEN        = os.environ["THREADS_ACCESS_TOKEN"]
 
 EXAMPLE_POSTS = """
 以下是真實的發文範例，請完全學習這個風格、語氣、句子長度和換行方式：
