@@ -94,6 +94,19 @@ def clean_text(text):
     text = re.sub(r'\n{3,}', '\n\n', text)
     lines = [line.strip() for line in text.split('\n')]
     return '\n'.join(lines).strip()
+    
+def add_line_spacing(text):
+    lines = text.split('\n')
+    result = []
+    for i, line in enumerate(lines):
+        result.append(line)
+        if i < len(lines) - 1:
+            current_ends_with_punct = line and line[-1] in '。！？'
+            next_line = lines[i + 1]
+            next_is_empty = next_line.strip() == ''
+            if current_ends_with_punct and not next_is_empty:
+                result.append('')
+    return '\n'.join(result)
 
 def truncate_to_chars(text, max_chars=480):
     text = text.strip()
@@ -308,6 +321,7 @@ def post_to_threads(post_text):
     for i, text in enumerate(posts):
         text = clean_text(text)
         text = text.replace("\\n", "\n")
+        text = add_line_spacing(text)
         text = truncate_to_chars(text, max_chars=480)
 
         if not text:
