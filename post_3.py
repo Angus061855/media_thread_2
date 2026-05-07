@@ -8,7 +8,7 @@ import requests
 NOTION_TOKEN_2     = os.environ["NOTION_API_KEY"]
 NOTION_POST_DB_ID  = os.environ["NOTION_DATABASE_ID_3"]
 THREADS_USER_ID    = os.environ["THREADS_USER_ID"]
-THREADS_TOKEN      = os.environ["IG_ACCESS_TOKEN"]
+THREADS_TOKEN      = os.environ["THREADS_ACCESS_TOKEN"]
 
 NOTION_HEADERS = {
     "Authorization": f"Bearer {NOTION_TOKEN_2}",
