@@ -104,7 +104,7 @@ def clean_text(text):
     lines = [line.strip() for line in text.split('\n')]
     return '\n'.join(lines).strip()
 
-def truncate_to_chars(text, max_chars=480):
+def truncate_to_chars(text, max_chars=350):
     text = text.strip()
     if len(text) <= max_chars:
         if text and text[-1] not in '。！？':
@@ -201,7 +201,7 @@ def generate_post(custom_topic):
 第七則：收尾昇華，引導留言或私訊（不要用「姐妹們」開頭）
 
 【字數規則】每則 200-280 個中文字，絕對不要超過 280 字
-一行不超過25個字。同一概念不空行，只有概念切換才空一行。
+一行不超過25個字。每句話獨立一行，句號後立刻換行，一行只有一句話。
 
 【語言風格】
 台灣口語，每句獨立一行，句號後換行。
@@ -322,7 +322,7 @@ def post_to_threads(post_text):
         text = clean_text(text)
         text = text.replace("\\n", "\n")
         text = add_line_spacing(text)
-        text = truncate_to_chars(text, max_chars=480)
+        text = truncate_to_chars(text, max_chars=350)
 
         if not text:
             print(f"⚠️ 第 {i+1} 則內容為空，跳過")
